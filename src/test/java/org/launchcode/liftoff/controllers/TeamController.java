@@ -1,5 +1,6 @@
 package org.launchcode.liftoff.controllers;
 
+import org.launchcode.liftoff.models.data.TeamDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,7 +44,7 @@ public class TeamController {
             return "team/add";
         }
 
-        menuDao.save(menu);
+        TeamDao.save(team);
         return "redirect:view/" + team.getId();
     }
 
