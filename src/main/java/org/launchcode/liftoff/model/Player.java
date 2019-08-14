@@ -1,10 +1,12 @@
 package org.launchcode.liftoff.model;
 
-import com.sun.istack.internal.NotNull;
-
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Table(name = "player")
 @Entity
@@ -21,12 +23,15 @@ public class Player {
 
     private String position;
 
-    @ManyToOne
-    private User user;
+    private Integer passingYards;
+
+    private Integer rushingYards;
+
+    private Integer touchdowns;
 
     public Player () {}
 
-    public Player (String name) {this.name = name}
+    public Player (String name) {this.name = name;}
 
     public int getId() {
         return id;
@@ -41,8 +46,7 @@ public class Player {
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
+        this.name = name; }
 
     public String getTeam() {
         return team;
@@ -52,14 +56,6 @@ public class Player {
         this.team = team;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public String getPosition() {
         return position;
     }
@@ -67,4 +63,29 @@ public class Player {
     public void setPosition(String position) {
         this.position = position;
     }
+
+    public Integer getPassingYards() {
+        return passingYards;
+    }
+
+    public void setPassingYards(Integer passingYards) {
+        this.passingYards = passingYards;
+    }
+
+    public Integer getRushingYards() {
+        return rushingYards;
+    }
+
+    public void setRushingYards(Integer rushingYards) {
+        this.rushingYards = rushingYards;
+    }
+
+    public Integer getTouchdowns() {
+        return touchdowns;
+    }
+
+    public void setTouchdowns(Integer touchdowns) {
+        this.touchdowns = touchdowns;
+    }
 }
+

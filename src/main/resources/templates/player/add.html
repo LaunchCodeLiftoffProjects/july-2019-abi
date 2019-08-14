@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" th:object="${player}">
+    <div class="form-group">
+        <label th:for="name">Name</label>
+    <input class="form-control" th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="team">Team</label>
+        <input class="form-control" th:field="*{team}" />
+        <span th:errors="*{team}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="position">Pos</label>
+        <input class="form-control" th:field="*{position}" />
+        <span th:errors="*{position}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="passingYards">Passing Yards</label>
+        <input class="form-control" th:field="*{passingYards}" />
+        <span th:errors="*{passingYards}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="rushingYards">Rushing Yards</label>
+        <input class="form-control" th:field="*{rushingYards}" />
+        <span th:errors="*{rushingYards}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="touchdowns">Touchdowns</label>
+        <input class="form-control" th:field="*{touchdowns}" />
+        <span th:errors="*{touchdowns}" class="error"></span>
+    </div>
+    <input type="submit" value="Make Player" />
+</form>
+</body>
+</html>
