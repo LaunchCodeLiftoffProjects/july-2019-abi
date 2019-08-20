@@ -1,6 +1,8 @@
 package org.launchcode.liftoff.controllers;
 
 import org.launchcode.liftoff.forms.Team;
+import org.launchcode.liftoff.model.Player;
+import org.launchcode.liftoff.model.data.PlayerDao;
 import org.launchcode.liftoff.models.data.TeamDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,12 +25,12 @@ public class TeamController {
     private PlayerDao playerDao;
 
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = " ")
     public String index(Model model) {
 
         model.addAttribute("title", "teams");
         model.addAttribute("teams", TeamDao.findAll());
-        return "menu/index";
+        return "team/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
@@ -59,8 +61,8 @@ public class TeamController {
         return "team/view";
     }
 
-    @RequestMapping(value="add-item/{menuId}", method = RequestMethod.GET)
-    public String addItem(Model model, @PathVariable int menuId) {
+    @RequestMapping(value="add-item/{teamId}", method = RequestMethod.GET)
+    public String addPlayer(Model model, @PathVariable int teamId) {
 
         Team team = teamDao.findOne(teamId);
 

@@ -1,5 +1,7 @@
 package org.launchcode.liftoff.forms;
 
+import org.launchcode.liftoff.model.Player;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
