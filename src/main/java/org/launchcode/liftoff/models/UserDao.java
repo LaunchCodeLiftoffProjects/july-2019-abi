@@ -1,4 +1,4 @@
-package org.launchcode.liftoff.models.data;
+package org.launchcode.liftoff.models;
 
 import org.launchcode.liftoff.models.User;
 import org.springframework.data.repository.CrudRepository;

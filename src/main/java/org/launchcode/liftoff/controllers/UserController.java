@@ -1,7 +1,7 @@
 package org.launchcode.liftoff.controllers;
 
 import org.launchcode.liftoff.models.User;
-import org.launchcode.liftoff.models.data.UserDao;
+import org.launchcode.liftoff.models.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

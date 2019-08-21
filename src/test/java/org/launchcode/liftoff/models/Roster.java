@@ -1,4 +1,4 @@
-package org.launchcode.liftoff.forms;
+package org.launchcode.liftoff.models;
 
 import org.launchcode.liftoff.model.Player;
 
@@ -22,7 +22,7 @@ public class Roster {
     private String name;
 
     @ManyToMany
-    private List<Roster> rosters;
+    private List<Player> players;
 
     public Roster() { }
 
@@ -36,7 +36,7 @@ public class Roster {
 
     public void setName(String name) {this.name=name;}
 
-    public List<Roster>getPlayers(){return players;}
+    public List<Player>getPlayers(){return players;}
 
     public void addPlayer(Player player) {players.add(player);}
 }
