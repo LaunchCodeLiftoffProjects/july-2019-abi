@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-public class Team {
+public class Roster {
     @Id
     @GeneratedValue
     private int id;
@@ -22,11 +22,11 @@ public class Team {
     private String name;
 
     @ManyToMany
-    private List<Team> teams;
+    private List<Roster> rosters;
 
-    public Team() { }
+    public Roster() { }
 
-    public Team(String name) {this.name=name;}
+    public Roster(String name) {this.name=name;}
 
     public int getId() {return id;}
 
@@ -36,7 +36,7 @@ public class Team {
 
     public void setName(String name) {this.name=name;}
 
-    public List<Team>getPlayers(){return players;}
+    public List<Roster>getPlayers(){return players;}
 
     public void addPlayer(Player player) {players.add(player);}
 }

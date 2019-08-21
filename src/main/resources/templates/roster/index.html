@@ -10,11 +10,12 @@
 
 <div>
     <ul>
-        <li th:each="player : ${team.players}"
-            th:text="${player.name}"></li>
+        <li th:each="roster : ${rosters}">
+            <a th:href="'/roster/view/' + ${roster.id}" th:text="${roster.name}"></a>
+        </li>
     </ul>
 </div>
 
-<p><a th:href ="'/team/add-player/' + ${team.id}">Add Player</a></p>
+<a href ="/roster/add">Add Team</a>
 </body>
 </html>
