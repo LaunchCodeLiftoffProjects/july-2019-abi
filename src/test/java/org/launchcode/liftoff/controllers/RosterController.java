@@ -20,10 +20,10 @@ import javax.validation.Valid;
 @RequestMapping("roster")
 public class RosterController {
     @Autowired
-    private RosterDao rosterDao;
+    public RosterDao rosterDao;
 
     @Autowired
-    private PlayerDao playerDao;
+    public PlayerDao playerDao;
 
 
     @RequestMapping(value = " ")
