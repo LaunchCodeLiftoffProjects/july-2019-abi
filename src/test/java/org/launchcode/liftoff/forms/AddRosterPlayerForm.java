@@ -16,7 +16,7 @@ public class AddRosterPlayerForm {
 
     public AddRosterPlayerForm() { }
 
-    public AddRosterPlayerForm(Iterable<Roster> cheeses, Roster roster){
+    public AddRosterPlayerForm(Iterable<Player> players, Roster roster){
         this.players=players;
         this.roster=roster;
     }

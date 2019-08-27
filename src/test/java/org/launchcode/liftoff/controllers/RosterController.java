@@ -30,7 +30,7 @@ public class RosterController {
     public String index(Model model) {
 
         model.addAttribute("title", "rosters");
-        model.addAttribute("rosters", RosterDao.findAll());
+        model.addAttribute("rosters", rosterDao.findAll());
         return "roster/index";
     }
 
@@ -48,14 +48,14 @@ public class RosterController {
             return "roster/add";
         }
 
-        RosterDao.save(roster);
+        rosterDao.save(roster);
         return "redirect:view/" + roster.getId();
     }
 
     @RequestMapping(value= "view/{id}", method = RequestMethod.GET)
     public String viewRoster(Model model, @PathVariable int id) {
 
-        Roster roster = RosterDao.findOne(id);
+        Roster roster = rosterDao.findOne(id);
 
         model.addAttribute("title", roster.getName());
         model.addAttribute("roster", roster);
@@ -67,7 +67,7 @@ public class RosterController {
 
         Roster roster = rosterDao.findOne(rosterId);
 
-        AddRosterPlayerForm form = new AddRosterPlayerForm(PlayerDao.findAll(), roster);
+        AddRosterPlayerForm form = new AddRosterPlayerForm(playerDao.findAll(), roster);
 
         model.addAttribute("title", "Add Roster Player:" + roster.getName());
         model.addAttribute("form", form);
@@ -86,7 +86,7 @@ public class RosterController {
         Player player = playerDao.findOne(playerForm.getPlayerId());
 
         roster.addPlayer(player);
-        playerDao.save(player);
+        rosterDao.save(roster);
 
         return "redirect:/roster/view/" + roster.getId();
     }
