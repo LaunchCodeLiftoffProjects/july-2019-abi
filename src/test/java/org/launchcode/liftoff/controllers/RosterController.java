@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("roster")
+@RequestMapping("/roster")
 public class RosterController {
     @Autowired
     public RosterDao rosterDao;
