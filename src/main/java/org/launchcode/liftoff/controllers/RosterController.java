@@ -26,10 +26,10 @@ public class RosterController {
     public PlayerDao playerDao;
 
 
-    @RequestMapping(value = " ")
+    @RequestMapping(value = "")
     public String index(Model model) {
 
-        model.addAttribute("title", "rosters");
+        model.addAttribute("title", "Rosters");
         model.addAttribute("rosters", rosterDao.findAll());
         return "roster/index";
     }
@@ -79,7 +79,7 @@ public class RosterController {
 
         if (errors.hasErrors()) {
             model.addAttribute("Title", "Add Player");
-            return "roster/add-player/";
+            return "roster/add-player";
         }
 
         Roster roster = rosterDao.findOne(playerForm.getRosterId());

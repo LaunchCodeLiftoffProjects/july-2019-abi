@@ -8,6 +8,8 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
+<p th:unless="${rosters} and ${rosters.size()}">no rosters</p>
+
 <div>
     <ul>
         <li th:each="roster : ${rosters}">

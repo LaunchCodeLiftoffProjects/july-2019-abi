@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/player")
+@RequestMapping("/players")
 public class PlayerController {
     @Autowired
     public PlayerDao playerDao;
@@ -30,7 +30,7 @@ public class PlayerController {
         model.addAttribute("title", "Make Player");
         model.addAttribute(new Player());
 
-        return"player/add";
+        return"players/add";
 
     }
 
@@ -39,7 +39,7 @@ public class PlayerController {
                                     errors, Model model){
         if(errors.hasErrors()){
             model.addAttribute("title", "Make Player");
-            return"player/add";
+            return"players/add";
         }
 
         playerDao.save(newPlayer);
