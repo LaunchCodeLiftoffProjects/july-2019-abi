@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${players} and ${players.size()}">no players in roster</p>
+
+<div>
+    <ul>
+        <li th:each="player : ${roster.players}"
+            th:text="${player.name}"></li>
+    </ul>
+</div>
+
+<p><a th:href ="'/roster/add-player/' + ${roster.id}">Add Player</a></p>
+</body>
+</html>
