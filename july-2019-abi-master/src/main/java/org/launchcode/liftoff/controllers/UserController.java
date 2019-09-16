@@ -26,7 +26,7 @@ public class UserController {
     @RequestMapping(value="/register", method = RequestMethod.GET)
     public String register(Model model) {
         model.addAttribute(new User());
-        model.addAttribute("title", "Register user");
+        model.addAttribute("title", "Register");
         model.addAttribute("user", userDao.findAll());
         return "user/register";
     }
