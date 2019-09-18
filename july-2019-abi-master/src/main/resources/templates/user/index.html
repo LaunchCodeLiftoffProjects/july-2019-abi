@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head" ></head>
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
 <body>
+<h1 th:text="${title}">Default Title</h1>
+
 <nav th:replace="fragments :: navigation"></nav>
 
-<h1 th:text="${title}">Users</h1>
-
-<p th:unless="${user}">Not logged in</p>
-<p th:each="user : ${user}"></p>
-<h1 th:text="'Hello, ' + ${user.username}"></h1>
-
-
+<p th:unless="${users} and ${users.size()}">no users found</p>
 
 <table class="table">
-    <tr>
-        <th>Username</th>
-    </tr>
-
     <tr th:each="user : ${users}">
         <td th:text="${user.username}"></td>
+        <td th:text="${user.email}"></td>
     </tr>
-
 </table>
+
 
 </body>
 </html>
