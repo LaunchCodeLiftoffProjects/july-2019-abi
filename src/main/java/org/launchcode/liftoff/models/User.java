@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 @Entity
 public class User {
 
@@ -16,27 +15,24 @@ public class User {
     private int id;
 
     @NotNull
-    @Size(min=5, max=15)
+    @Size(min = 5, max = 15)
     private String username;
 
     @NotNull
-    @Email
+    @Email(message = "not a valid email address")
     private String email;
 
     @NotNull
-    @Size(min=6)
+    @Size(min = 6, message = "Password needs to be 6 characters at minimum")
     private String password;
 
-    public User(String username, String email, String password) {
+    public User() {
+    }
+
+    public User(String username, String email, String password /* Role role */) {
         this.username = username;
         this.email = email;
         this.password = password;
-    }
-
-    public User() { }
-
-    public int getId() {
-        return id;
     }
 
     public String getUsername() {
@@ -62,4 +58,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
